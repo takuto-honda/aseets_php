@@ -42,6 +42,10 @@
     <!-- <input type="submit" value="送信"> -->
   <!-- </form> -->
 
+  <!-- 悪意をもった攻撃者
+  xss
+  <script>alert('悪意のある攻撃！！');</script> -->
+
   
 </body>
 </html>
