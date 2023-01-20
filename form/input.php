@@ -1,6 +1,9 @@
 <?php
   // CSRF対策
   session_start();
+
+  require('validation.php');
+
   // xss対策
   function h($str){
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
@@ -9,8 +12,9 @@
   header("X-FRAME-OPTIONS: DENY"); 
 
   $pageFlag = 0;
+  $errors = validation($_POST);
 
-  if(!empty($_POST['btn_confirm'])){
+  if(!empty($_POST['btn_confirm']) && empty($errors)){
     $pageFlag = 1;
   }
 
@@ -30,6 +34,7 @@
 <body>
     <!-- 入力画面 -->
     <?php if($pageFlag === 0): ?>
+    <!-- CSRF対策のためトークンを発行 -->
     <?php
       if(!isset($_SESSION['csrfToken'])){
         //ランダムなバイトを16進数に変換しセッションに代入
@@ -37,6 +42,17 @@
         $_SESSION['csrfToken'] = $csrfToken;
       }
       $token = $_SESSION['csrfToken'];
+    ?>
+
+    <!-- バリデーション -->
+    <?php
+    if(!empty($errors) && !empty($_POST['btn_confirm'])){ 
+      echo '<ul>';
+        foreach($errors as $error) {
+          echo '<li>' . $error . '</li>';
+        }
+      echo '</ul>';
+    }
     ?>
 
     <form method="POST" action="input.php">
