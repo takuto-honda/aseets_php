@@ -9,7 +9,6 @@
 // if(!empty($_POST['name'])){
 //   echo $_POST['name'];
 // }
-
 ?>
 <!DOCTYPE html>
 <html lang="ja">
