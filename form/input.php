@@ -1,4 +1,9 @@
 <?php
+  // xss対策
+  function h($str){
+    return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
+  }
+
   $pageFlag = 0;
 
   if(!empty($_POST['btn_confirm'])){
@@ -62,31 +67,31 @@
     <form method="POST" action="input.php">
       氏名
       <br>
-      <?php echo $_POST['name']; ?>
+      <?php echo h($_POST['name']); ?>
       <br>
       メールアドレス
       <br>
-      <?php echo $_POST['email']; ?>
+      <?php echo h($_POST['email']); ?>
       <br>
       性別
       <br>
-      <?php echo $_POST['gender']; ?>
+      <?php echo h($_POST['gender']); ?>
       <br>
       年齢
       <br>
-      <?php echo $_POST['age']; ?>
+      <?php echo h($_POST['age']); ?>
       <br>
       お問い合わせ内容
       <br>
-      <?php echo $_POST['contact']; ?>
+      <?php echo h($_POST['contact']); ?>
       <br>
       <input type="submit" name="btn_submit" value="送信">
       <input type="submit" name="back" value="戻る">
-      <input type="hidden" name="name" value=<?php echo $_POST['name'];?>>
-      <input type="hidden" name="email" value=<?php echo $_POST['email'];?>>
-      <input type="hidden" name="gender" value=<?php echo $_POST['gender'];?>>
-      <input type="hidden" name="age" value=<?php echo $_POST['age'];?>>
-      <input type="hidden" name="contact" value=<?php echo $_POST['contact'];?>>
+      <input type="hidden" name="name" value=<?php echo h($_POST['name']);?>>
+      <input type="hidden" name="email" value=<?php echo h($_POST['email']);?>>
+      <input type="hidden" name="gender" value=<?php echo h($_POST['gender']);?>>
+      <input type="hidden" name="age" value=<?php echo h($_POST['age']);?>>
+      <input type="hidden" name="contact" value=<?php echo h($_POST['contact']);?>>
     </form>
   <?php endif;?>  
   
