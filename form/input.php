@@ -53,7 +53,7 @@
       <br>
       <input type="checkbox" name="caution" value="1">注意事項に同意する
       <br>
-      <input type="submit" name="btn_confirm" value="送信">
+      <input type="submit" name="btn_confirm" value="確認画面へ">
     </form>
   <?php endif; ?>
 
@@ -80,7 +80,7 @@
       <br>
       <?php echo $_POST['contact']; ?>
       <br>
-      <input type="submit" name="btn_confirm" value="送信">
+      <input type="submit" name="btn_submit" value="送信">
       <input type="submit" name="back" value="戻る">
       <input type="hidden" name="name" value=<?php echo $_POST['name'];?>>
       <input type="hidden" name="email" value=<?php echo $_POST['email'];?>>
