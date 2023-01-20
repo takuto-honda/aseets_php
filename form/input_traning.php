@@ -53,5 +53,8 @@
   Header set X-FRAME-OPTIONS "DENY"
   または、httpd.confで設定してもOKです。 -->
   
+
+  <!-- isset()は、NULL以外の何かが設定されていればtrue
+  empty()は、要素が空であればtrue -->
 </body>
 </html>
