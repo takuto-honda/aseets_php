@@ -6,9 +6,9 @@
 // }
 
 //POSTの入力値を取得
-if(!empty($_POST['name'])){
-  echo $_POST['name'];
-}
+// if(!empty($_POST['name'])){
+//   echo $_POST['name'];
+// }
 
 ?>
 <!DOCTYPE html>
