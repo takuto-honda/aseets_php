@@ -46,6 +46,12 @@
   xss
   <script>alert('悪意のある攻撃！！');</script> -->
 
+  <!-- クリックジャッkング
+  phpファイル
+  <?php // header("X-FRAME-OPTIONS: DENY"); ?>
+  サーバーの.htaccessに以下のような記述を追加する方法もあります。
+  Header set X-FRAME-OPTIONS "DENY"
+  または、httpd.confで設定してもOKです。 -->
   
 </body>
 </html>

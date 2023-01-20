@@ -3,6 +3,8 @@
   function h($str){
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
   }
+  // クリックジャッキング
+  header("X-FRAME-OPTIONS: DENY"); 
 
   $pageFlag = 0;
 
