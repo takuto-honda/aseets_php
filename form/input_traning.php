@@ -55,5 +55,33 @@
 
   <!-- isset()は、NULL以外の何かが設定されていればtrue
   empty()は、要素が空であればtrue -->
+
+  <!-- タイプピンティング -->
+  <?php
+  // //強い方指定
+  // // declare(strict_types=1);
+
+  // function typeTest(string $test){
+  //   return $test;
+  // }
+  // $str = 'aaa';
+  // echo typeTest('おおお');
+  // echo typeTest(1);
+
+  //可変変数
+  // function double_variable(...$name){
+  //   return var_dump($name);
+  // }
+
+  // echo double_variable('本田', '佐藤' , '伊藤');
+
+  // // 関数の中に組み込み関数
+  // $name = [' 本田 ', ' 佐藤 ', ' 伊藤 '];
+  // echo '<pre>';var_dump($name);echo '</pre>';
+  // $trim_array = array_map('trim', $name);
+  // echo '<pre>';var_dump($trim_array);echo '</pre>';
+  ?>
+
+
 </body>
 </html>
