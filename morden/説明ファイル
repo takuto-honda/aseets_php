@@ -1,0 +1,4 @@
+// composer init composerファイル作成
+// composer install composerのインストール/autoloadファイルの作成
+// composer update アップデート
+// composer dump-autoload アップデート
