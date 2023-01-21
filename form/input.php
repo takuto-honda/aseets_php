@@ -161,6 +161,10 @@
   <!-- 送信完了画面 -->
   <?php if($pageFlag === 2): ?>
   <?php if($_POST['csrf'] === $_SESSION['csrfToken']):?>
+  <?php
+    require '../pdo/insert.php';
+    insertContact($_POST);
+  ?>
     送信が完了しました
   <!-- csrfの削除 -->
   <?php unset($_SESSION['csrfToken']); ?>
